@@ -29,13 +29,13 @@ function colorear(tareas) {
   tareas.forEach((el) => {
     switch (el.estado) {
       case "Pendiente":
-        console.log(`${el.titulo} ${chalk.yellowBright("-->")} ${chalk.red(el.estado)}`);
+        console.log(`► ${el.titulo} ${chalk.yellowBright("-->")} ${chalk.red(`[${el.estado}]`)}`);
         break;
       case "En progreso":
-        console.log(`${el.titulo} ${chalk.yellowBright("-->")} ${chalk.cyan(el.estado)}`);
+        console.log(`► ${el.titulo} ${chalk.yellowBright("-->")} ${chalk.cyan(`[${el.estado}]`)}`);
         break;
       case "Terminado":
-        console.log(`${el.titulo} ${chalk.yellowBright("-->")} ${chalk.green(el.estado)}`);
+        console.log(`► ${el.titulo} ${chalk.yellowBright("-->")} ${chalk.green(`[${el.estado}]`)}`);
         break;
     }
   });
@@ -100,19 +100,21 @@ function detalles(titulo) {
   tarea = tareas.find((el) => el.titulo == titulo);
   if (tarea) {
     console.log();
-    console.log(chalk.yellow(tarea.titulo));
+    console.log("-".repeat(tarea.titulo.length));
+    console.log(`${chalk.yellow(tarea.titulo)}`);
+    console.log("-".repeat(tarea.titulo.length));
     console.log();
-    console.log(chalk.green(tarea.descripcion));
+    console.log(`► ${chalk.green(tarea.descripcion)}`);
     console.log();
     switch (tarea.estado) {
       case "Pendiente":
-        console.log(`${chalk.red(tarea.estado)}`);
+        console.log(`${chalk.red(`[${tarea.estado}]`)}`);
         break;
       case "En progreso":
-        console.log(`${chalk.cyan(tarea.estado)}`);
+        console.log(`${chalk.cyan(`[${tarea.estado}]`)}`);
         break;
       case "Terminado":
-        console.log(`${chalk.green(tarea.estado)}`);
+        console.log(`${chalk.green(`[${tarea.estado}]`)}`);
         break;
     }
   } else {

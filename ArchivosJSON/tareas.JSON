@@ -1,0 +1,57 @@
+[
+ {
+  "titulo": "Practicar JS",
+  "descripcion": "Estudiar sobre como funciona el sincronismo",
+  "estado": "Pendiente"
+ },
+ {
+  "titulo": "Practicar CSS",
+  "descripcion": "Ver como funciona flexbox",
+  "estado": "Pendiente"
+ },
+ {
+  "titulo": "Practicar JS 2",
+  "descripcion": "Estudiar que son las promesas",
+  "estado": "Terminado"
+ },
+ {
+  "titulo": "Realizar compras",
+  "descripcion": "Ir al supermercado por provisiones",
+  "estado": "Terminado"
+ },
+ {
+  "titulo": "Hacer Ejercicio",
+  "descripcion": "Realizar rutina de pecho",
+  "estado": "Pendiente"
+ },
+ {
+  "titulo": "Realizar la cena",
+  "descripcion": "Cocinar un alto guiso",
+  "estado": "En progreso"
+ },
+ {
+  "titulo": "Estudiar Ingles",
+  "descripcion": "Asistir a la clase de ingles y hacer la tarea",
+  "estado": "En progreso"
+ },
+ {
+  "titulo": "nuevaNota",
+  "descripcion": "Esta es una prueba",
+  "estado": "Pendiente"
+ },
+ {
+  "titulo": "notaPrueba",
+  "descripcion": "Probando si se graba en el json",
+  "estado": "Pendiente"
+ },
+ {
+  "titulo": "notaPrueba2",
+  "descripcion": "Probando si se graba en el json con formato",
+  "estado": "Pendiente"
+ },
+ {
+  "titulo": "notaLarga",
+  "descripcion": "When I was a young boy, my father took me into the city to see a marching band. He said, son when you grow up would you be the savior of the broken, the beaten and the damned? He said, will you defeat them, your demons, and all the non-believers, the plans that they have made? Because one day I'll leave you a phantom, to led you in the summer to join the black parade",
+  "estado": "En progreso"
+ }
+]

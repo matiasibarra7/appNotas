@@ -1,5 +1,6 @@
 const fs = require("fs");
 const chalk = require("./node_modules/chalk");
+const tareas = leerJSON() 
 
 function leerJSON() {
   let tareas = JSON.parse(fs.readFileSync("./ArchivosJSON/tareas.JSON", "utf8"));
@@ -12,13 +13,12 @@ function escribirJSON(tareas) {
 }
 
 function listar(estado) {
-  const tareas = leerJSON();
   if (estado) {
     let tareasE = tareas.filter((el) => el.estado == estado);
     if (tareasE.length != 0) {
       colorear(tareasE);
     } else {
-      console.log("No existe ese estado. Ingrese: [Terminado, Pendiente, En progreso] ");
+      console.log("No existe ese estado. Ingrese: [Terminado], [Pendiente] o [En progreso]");
     }
   } else {
     colorear(tareas);
@@ -42,7 +42,6 @@ function colorear(tareas) {
 }
 
 function borrar(tarea) {
-  const tareas = leerJSON();
   let ntareas = tareas.filter((el) => el.titulo != tarea);
   //console.log(ntareas);
   if (ntareas.length != tareas.length) {
@@ -55,7 +54,6 @@ function borrar(tarea) {
 
 function crear(titulo, descripcion = "Sin decripción", estado = "Pendiente") {
   if (titulo) {
-    const tareas = leerJSON();
     newNota = {
       titulo: titulo,
       descripcion: descripcion,
@@ -71,7 +69,6 @@ function crear(titulo, descripcion = "Sin decripción", estado = "Pendiente") {
 }
 
 function completar(titulo) {
-  const tareas = leerJSON();
   let band = false;
   let mtareas = tareas.map((el) => {
     if (el.titulo == titulo) {
@@ -96,7 +93,6 @@ function completar(titulo) {
 }
 
 function detalles(titulo) {
-  const tareas = leerJSON();
   tarea = tareas.find((el) => el.titulo == titulo);
   if (tarea) {
     console.log();
@@ -123,8 +119,6 @@ function detalles(titulo) {
 }
 
 module.exports = {
-  leerJSON,
-  escribirJSON,
   listar,
   crear,
   borrar,

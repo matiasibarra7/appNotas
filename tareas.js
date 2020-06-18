@@ -69,22 +69,22 @@ function crear(titulo, descripcion = "Sin decripción", estado = "Pendiente") {
 }
 
 function completar(titulo) {
-  let band = false;
-  let mtareas = tareas.map((el) => {
-    if (el.titulo == titulo) {
-      let auxEl = {
-        titulo: el.titulo,
-        descripcion: el.descripcion,
+  let fueModificado = false;
+  let mtareas = tareas.map((tarea) => {
+    if (tarea.titulo == titulo) {
+      let tareaModificada = {
+        titulo: tarea.titulo,
+        descripcion: tarea.descripcion,
         estado: "Terminado",
       };
-      band = true;
-      return auxEl;
+      fueModificado = true;
+      return tareaModificada;
     } else {
-      return el;
+      return tarea;
     }
   });
   //console.log(mtareas);
-  if (band) {
+  if (fueModificado) {
     escribirJSON(mtareas);
     console.log(`¡Tarea ${chalk.yellow(`[${titulo}]`)} completada!`);
   } else {

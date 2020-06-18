@@ -72,16 +72,10 @@ function completar(titulo) {
   let fueModificado = false;
   let mtareas = tareas.map((tarea) => {
     if (tarea.titulo == titulo) {
-      let tareaModificada = {
-        titulo: tarea.titulo,
-        descripcion: tarea.descripcion,
-        estado: "Terminado",
-      };
+      tarea.estado ="Terminado"
       fueModificado = true;
-      return tareaModificada;
-    } else {
-      return tarea;
-    }
+    } 
+    return tarea;
   });
   //console.log(mtareas);
   if (fueModificado) {
@@ -100,17 +94,16 @@ function detalles(titulo) {
     console.log(`${chalk.yellowBright(tarea.titulo)}`);
     console.log("-".repeat(tarea.titulo.length));
     console.log();
-    console.log(`► ${chalk.green(tarea.descripcion)}`);
-    console.log();
+    console.log(`DESCRIPCIÓN: ${chalk.green(tarea.descripcion)}`);
     switch (tarea.estado) {
       case "Pendiente":
-        console.log(`${chalk.red(`[${tarea.estado}]`)}`);
+        console.log(`ESTADO: ${chalk.red(`[${tarea.estado}]`)}`);
         break;
       case "En progreso":
-        console.log(`${chalk.cyan(`[${tarea.estado}]`)}`);
+        console.log(`ESTADO: ${chalk.cyan(`[${tarea.estado}]`)}`);
         break;
       case "Terminado":
-        console.log(`${chalk.green(`[${tarea.estado}]`)}`);
+        console.log(`ESTADO: ${chalk.green(`[${tarea.estado}]`)}`);
         break;
     }
   } else {

@@ -8,16 +8,16 @@ console.log();
 
 switch (parametros[0]) {
   case undefined:
-    console.log(`${chalk.green("Sin parametros")}. Escriba ${chalk.yellow("Comandos")} para ver los comandos posibles`);
+    console.log(`${chalk.green("Sin parametros")}. Escriba ${chalk.yellowBright("Comandos")} para ver los comandos posibles`);
     break;
   case "Listar":
     task.listar(parametros[1]);
     break;
   case "Comandos":
-    console.log(`${chalk.green("[Listar]")} ${chalk.yellow("[Crear]")} ${chalk.green("[Completar]")} ${chalk.yellow("[Borrar]")} ${chalk.green("[Detalles]")}`);
+    console.log(`${chalk.green("[Listar]")} ${chalk.yellowBright("[Crear]")} ${chalk.green("[Completar]")} ${chalk.yellowBright("[Borrar]")} ${chalk.green("[Detalles]")}`);
     break;
   case "Crear":
-    task.crear(parametros[1], parametros[2]);
+    task.crear(parametros[1], parametros[2], parametros[3]);
     break;
   case "Completar":
     task.completar(parametros[1]);
@@ -29,7 +29,7 @@ switch (parametros[0]) {
     task.detalles(parametros[1]);
     break;
   default:
-    console.log(`${chalk.green("Tarea no valida")}. Escriba ${chalk.yellow("Comandos")} para ver los comandos posibles`);
+    console.log(`${chalk.green("Tarea no valida")}. Escriba ${chalk.yellowBright("Comandos")} para ver los comandos posibles`);
     break;
 }
 

@@ -1,5 +1,6 @@
 const fs = require("fs");
 const chalk = require("./node_modules/chalk");
+const tareas = leerJSON();
 
 function leerJSON() {
   let tareas = JSON.parse(fs.readFileSync("./ArchivosJSON/tareas.JSON", "utf8"));
@@ -12,13 +13,12 @@ function escribirJSON(tareas) {
 }
 
 function listar(estado) {
-  const tareas = leerJSON();
   if (estado) {
     let tareasE = tareas.filter((el) => el.estado == estado);
     if (tareasE.length != 0) {
       colorear(tareasE);
     } else {
-      console.log("No existe ese estado. Ingrese: [Terminado, Pendiente, En progreso] ");
+      console.log("No existe ese estado. Ingrese: [Terminado], [Pendiente] o [En progreso]");
     }
   } else {
     colorear(tareas);
@@ -42,7 +42,6 @@ function colorear(tareas) {
 }
 
 function borrar(tarea) {
-  const tareas = leerJSON();
   let ntareas = tareas.filter((el) => el.titulo != tarea);
   //console.log(ntareas);
   if (ntareas.length != tareas.length) {
@@ -55,7 +54,6 @@ function borrar(tarea) {
 
 function crear(titulo, descripcion = "Sin decripción", estado = "Pendiente") {
   if (titulo) {
-    const tareas = leerJSON();
     newNota = {
       titulo: titulo,
       descripcion: descripcion,
@@ -63,7 +61,7 @@ function crear(titulo, descripcion = "Sin decripción", estado = "Pendiente") {
     };
     tareas.push(newNota);
     escribirJSON(tareas);
-    console.log(chalk.green(`¡Has creado la tarea ${chalk.yellow(`[${titulo}]`)} con éxito!`));
+    console.log(chalk.green(`¡Has creado la tarea ${chalk.yellowBright(`[${titulo}]`)} con éxito!`));
     //console.log("tareas", tareas);
   } else {
     console.log(chalk.red("Debe ingresar un título para su nueva tarea"));
@@ -71,37 +69,35 @@ function crear(titulo, descripcion = "Sin decripción", estado = "Pendiente") {
 }
 
 function completar(titulo) {
-  const tareas = leerJSON();
-  let band = false;
-  let mtareas = tareas.map((el) => {
-    if (el.titulo == titulo) {
-      let auxEl = {
-        titulo: el.titulo,
-        descripcion: el.descripcion,
+  let fueModificado = false;
+  let mtareas = tareas.map((tarea) => {
+    if (tarea.titulo == titulo) {
+      let tareaModificada = {
+        titulo: tarea.titulo,
+        descripcion: tarea.descripcion,
         estado: "Terminado",
       };
-      band = true;
-      return auxEl;
+      fueModificado = true;
+      return tareaModificada;
     } else {
-      return el;
+      return tarea;
     }
   });
   //console.log(mtareas);
-  if (band) {
+  if (fueModificado) {
     escribirJSON(mtareas);
-    console.log(`¡Tarea ${chalk.yellow(`[${titulo}]`)} completada!`);
+    console.log(`¡Tarea ${chalk.yellowBright(`[${titulo}]`)} completada!`);
   } else {
     console.log(chalk.red("No existe una tarea con ese título"));
   }
 }
 
 function detalles(titulo) {
-  const tareas = leerJSON();
   tarea = tareas.find((el) => el.titulo == titulo);
   if (tarea) {
     console.log();
     console.log("-".repeat(tarea.titulo.length));
-    console.log(`${chalk.yellow(tarea.titulo)}`);
+    console.log(`${chalk.yellowBright(tarea.titulo)}`);
     console.log("-".repeat(tarea.titulo.length));
     console.log();
     console.log(`► ${chalk.green(tarea.descripcion)}`);
@@ -118,13 +114,11 @@ function detalles(titulo) {
         break;
     }
   } else {
-    console.log(chalk.red("No existe una tarea con ese título"));
+    console.log(chalk.red("Es necesario que ingrese un título"));
   }
 }
 
 module.exports = {
-  leerJSON,
-  escribirJSON,
   listar,
   crear,
   borrar,

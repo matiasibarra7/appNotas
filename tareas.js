@@ -63,7 +63,7 @@ function crear(titulo, descripcion = "Sin decripción", estado = "Pendiente") {
     };
     tareas.push(newNota);
     escribirJSON(tareas);
-    console.log(chalk.green(`¡Has creado la tarea ${chalk.yellow(`[${titulo}]`)} con éxito!`));
+    console.log(chalk.green(`¡Has creado la tarea ${chalk.yellowBright(`[${titulo}]`)} con éxito!`));
     //console.log("tareas", tareas);
   } else {
     console.log(chalk.red("Debe ingresar un título para su nueva tarea"));
@@ -89,36 +89,39 @@ function completar(titulo) {
   //console.log(mtareas);
   if (band) {
     escribirJSON(mtareas);
-    console.log(`¡Tarea ${chalk.yellow(`[${titulo}]`)} completada!`);
+    console.log(`¡Tarea ${chalk.yellowBright(`[${titulo}]`)} completada!`);
   } else {
     console.log(chalk.red("No existe una tarea con ese título"));
   }
 }
 
 function detalles(titulo) {
-  const tareas = leerJSON();
-  tarea = tareas.find((el) => el.titulo == titulo);
-  if (tarea) {
-    console.log();
-    console.log("-".repeat(tarea.titulo.length));
-    console.log(`${chalk.yellow(tarea.titulo)}`);
-    console.log("-".repeat(tarea.titulo.length));
-    console.log();
-    console.log(`► ${chalk.green(tarea.descripcion)}`);
-    console.log();
-    switch (tarea.estado) {
-      case "Pendiente":
-        console.log(`${chalk.red(`[${tarea.estado}]`)}`);
-        break;
-      case "En progreso":
-        console.log(`${chalk.cyan(`[${tarea.estado}]`)}`);
-        break;
-      case "Terminado":
-        console.log(`${chalk.green(`[${tarea.estado}]`)}`);
-        break;
+  if (titulo) {
+    const tareas = leerJSON();
+    tarea = tareas.find((el) => el.titulo == titulo);
+    if (tarea) {
+      console.log("-".repeat(tarea.titulo.length));
+      console.log(`${chalk.yellowBright(tarea.titulo)}`);
+      console.log("-".repeat(tarea.titulo.length));
+      console.log();
+      console.log(`► ${chalk.green(tarea.descripcion)}`);
+      console.log();
+      switch (tarea.estado) {
+        case "Pendiente":
+          console.log(`${chalk.red(`[${tarea.estado}]`)}`);
+          break;
+        case "En progreso":
+          console.log(`${chalk.cyan(`[${tarea.estado}]`)}`);
+          break;
+        case "Terminado":
+          console.log(`${chalk.green(`[${tarea.estado}]`)}`);
+          break;
+      }
+    } else {
+      console.log(chalk.red("No existe una tarea con ese título"));
     }
   } else {
-    console.log(chalk.red("No existe una tarea con ese título"));
+    console.log(chalk.red("Es necesario que ingrese un título"));
   }
 }
 

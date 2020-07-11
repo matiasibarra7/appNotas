@@ -1,7 +1,26 @@
 // CLASE 11-06 APLICACION DE NOTAS
 
-const task = require("./tareas.js");
+const task = require("./public/js/tareas.js");
 const chalk = require("./node_modules/chalk");
+const express = require("express")
+const app = express()
+
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
+
+app.get("/", (req,res) => {
+  res.sendFile(`${__dirname}/views/index.html`)
+})
+
+app.post("/", (req,res) => {
+  task.crear(req.body.titulo, req.body.decripcion, req.body.estado);
+  res.sendFile(`${__dirname}/views/index.html`)
+})
+
+app.listen(8888, () => {
+  console.log("running server!")
+})
+
 
 let parametros = process.argv.slice(2);
 console.log();

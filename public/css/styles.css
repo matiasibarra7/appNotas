@@ -1,0 +1,29 @@
+body {
+    background-color: #DDC9B4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.new-nota {
+    background-color: #BCAC9B;
+    max-width: 400px;
+    display: none;
+    padding: 10px;
+    justify-content: center;
+}
+
+.campo-notas {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+}
+
+.new-nota textarea {
+    resize: none;
+}
+
+.tittle-new-note {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    height: 15px;
+}

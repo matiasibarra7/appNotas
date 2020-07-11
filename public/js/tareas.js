@@ -1,5 +1,5 @@
 const fs = require("fs");
-const chalk = require("./node_modules/chalk");
+const chalk = require("chalk");
 const tareas = leerJSON();
 
 function leerJSON() {

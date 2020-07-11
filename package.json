@@ -1,0 +1,24 @@
+{
+  "name": "app-notas-natiel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matiasibarra7/appNotas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matiasibarra7/appNotas/issues"
+  },
+  "homepage": "https://github.com/matiasibarra7/appNotas#readme"
+}

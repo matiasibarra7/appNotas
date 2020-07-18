@@ -17,6 +17,12 @@ app.post("/", (req,res) => {
   res.sendFile(`${__dirname}/views/index.html`)
 })
 
+//Esto es una url para el json, lo hice guitarreando
+app.get("/archivoJSONtareas", (req,res) => {
+  res.send(task.tareas)
+})
+
+
 app.listen(8888, () => {
   console.log("running server!")
 })

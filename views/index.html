@@ -9,12 +9,31 @@
     <title>Nahuelito</title>
 </head>
 <body>
+    <header>
+        ¡Bienvenidos/as a mi app web de notas!
+    </header>
     <main>
-        The elephant in the room
-        <div class="notes-container">
+        <div class="table-container">
+            <div class="state to-do">
+                <p>Pendiente</p>
+                <section>
 
+                </section>
+            </div>
+            <div class="state progress">
+                <p>En proceso</p>
+                <section>
+
+                </section>
+            </div>
+            <div class="state done">
+                <p>Terminado</p>
+                <section>
+
+                </section>
+            </div>
         </div>
-        <div>
+        <div class="action-btns">
             <button onclick=newNote()>Nueva nota</button>
         </div>
        
@@ -29,7 +48,7 @@
 
 
             <div class="campo-notas">
-                <label for="titulo">Titulo de la nota</label>
+                <label for="titulo">Título de la nota</label>
                 <input type="text" name="titulo">
             </div>
 

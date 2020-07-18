@@ -117,4 +117,5 @@ module.exports = {
   borrar,
   completar,
   detalles,
+  tareas,
 };

@@ -5,12 +5,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function newNote() {
     let divNewNota = document.querySelector(".new-nota")
+    let divCover = document.querySelector(".cover")
+
     divNewNota.style.display = "flex"
+    divCover.style.display = "block"
 }
 
 function closeModal() {
     let divNewNota = document.querySelector(".new-nota")
+    let divCover = document.querySelector(".cover")
+
     divNewNota.style.display = "none"
+    divCover.style.display = "none"
 }
 
 function readNotes() {

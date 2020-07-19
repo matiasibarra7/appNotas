@@ -3,6 +3,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
+    margin: 0;
 }
 
 header {
@@ -11,7 +12,7 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
     font-weight: bold;
-    background-color: #7BB2D9;
+    background-color: #94B394;
 }
 
 main {
@@ -31,8 +32,17 @@ main {
     width: 30%;
 }
 
+.column-tittle {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .table-container article {
     background-color: #DBE6DB;
+    border: 1px solid #BCAC9B;
+    padding: 0 8px;
+    margin: 16px 0;
 }
 
 .new-nota {
@@ -42,6 +52,9 @@ main {
     padding: 10px;
     justify-content: center;
     align-self: center;
+    z-index: 10;
+    position: absolute;
+    margin: 10% auto;
 }
 
 .close {
@@ -79,3 +92,14 @@ main {
     font-weight: bold;
     height: 15px;
 }
+
+.cover {
+    display: none;
+    background-color: #445F44;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 9;
+    width: 100vw;
+    height: 100vw;
+}
+

@@ -26,16 +26,7 @@ main {
     display: flex;
     justify-content: space-around;
     min-height: 480px;
-}
-
-.table-container .state {
-    width: 30%;
-}
-
-.column-tittle {
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
+    /* max-height: 80vh; */
 }
 
 .table-container article {
@@ -44,6 +35,18 @@ main {
     padding: 0 8px;
     margin: 16px 0;
 }
+
+.table-container .state {
+    width: 30%;
+    /* overflow-y: scroll; */
+}
+
+.column-tittle {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 
 .new-nota {
     background-color: #BCAC9B;
@@ -55,6 +58,10 @@ main {
     z-index: 10;
     position: absolute;
     margin: 10% auto;
+}
+
+.new-nota textarea {
+    resize: none;
 }
 
 .close {
@@ -77,13 +84,19 @@ main {
     padding: 15px 0;
 }
 
+.cover {
+    display: none;
+    background-color: #445F44;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 9;
+    width: 100vw;
+    height: calc(100vh + 100px);
+}
+
 .action-btns {
     margin: 15px auto;
     max-width: 100px;
-}
-
-.new-nota textarea {
-    resize: none;
 }
 
 .tittle-new-note {
@@ -93,13 +106,5 @@ main {
     height: 15px;
 }
 
-.cover {
-    display: none;
-    background-color: #445F44;
-    opacity: 0.5;
-    position: absolute;
-    z-index: 9;
-    width: 100vw;
-    height: 100vw;
-}
+
 

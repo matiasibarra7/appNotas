@@ -1,74 +1,77 @@
 body {
-    background-color: #DDC9B4;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+  background-color: #ddc9b4;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
 
 header {
-    padding: 24px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    background-color: #94B394;
+  padding: 24px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #94b394;
 }
 
 main {
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .table-container {
-    background-color: #BFD2BF;
-    display: flex;
-    justify-content: space-around;
-    min-height: 480px;
-    /* max-height: 80vh; */
+  background-color: #bfd2bf;
+  display: flex;
+  justify-content: space-around;
+  min-height: 480px;
+  /* max-height: 80vh; */
 }
 
 .table-container article {
-    background-color: #DBE6DB;
-    border: 1px solid #BCAC9B;
-    padding: 0 8px;
-    margin: 16px 0;
+  background-color: #dbe6db;
+  border: 1px solid #bcac9b;
+  padding: 0 8px;
+  margin: 16px 0;
+}
+
+article.test-delete {
+  background-color: thistle;
 }
 
 .table-container .state {
-    width: 30%;
-    /* overflow-y: scroll; */
+  width: 30%;
+  /* overflow-y: scroll; */
 }
 
 .column-tittle {
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-
 .new-nota {
-    background-color: #BCAC9B;
-    max-width: 400px;
-    display: none;
-    padding: 10px;
-    justify-content: center;
-    align-self: center;
-    z-index: 10;
-    position: absolute;
-    margin: 10% auto;
+  background-color: #bcac9b;
+  max-width: 400px;
+  display: none;
+  padding: 10px;
+  justify-content: center;
+  align-self: center;
+  z-index: 10;
+  position: absolute;
+  margin: 10% auto;
 }
 
 .new-nota textarea {
-    resize: none;
+  resize: none;
 }
 
 .close {
-    color: black;
-    float: right;
-    font-size: 13px;
-    font-weight: bold;
+  color: black;
+  float: right;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .close:hover,
@@ -79,32 +82,29 @@ main {
 }
 
 .campo-notas {
-    display: flex;
-    flex-direction: column;
-    padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
 }
 
 .cover {
-    display: none;
-    background-color: #445F44;
-    opacity: 0.5;
-    position: absolute;
-    z-index: 9;
-    width: 100vw;
-    height: calc(100vh + 100px);
+  display: none;
+  background-color: #445f44;
+  opacity: 0.5;
+  position: absolute;
+  z-index: 9;
+  width: 100vw;
+  height: calc(100vh + 100px);
 }
 
 .action-btns {
-    margin: 15px auto;
-    max-width: 100px;
+  margin: 15px auto;
+  max-width: 100px;
 }
 
 .tittle-new-note {
-    text-align: center;
-    font-size: large;
-    font-weight: bold;
-    height: 15px;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  height: 15px;
 }
-
-
-

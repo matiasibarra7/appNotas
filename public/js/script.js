@@ -1,25 +1,25 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    console.log("que se le va hacer");
-    readNotes()
-})
+document.addEventListener("DOMContentLoaded", function (event) {
+  console.log("que se le va hacer");
+  renderNotes();
+});
 
 function newNote() {
-    let divNewNota = document.querySelector(".new-nota")
-    let divCover = document.querySelector(".cover")
+  let divNewNota = document.querySelector(".new-nota");
+  let divCover = document.querySelector(".cover");
 
-    divNewNota.style.display = "flex"
-    divCover.style.display = "block"
+  divNewNota.style.display = "flex";
+  divCover.style.display = "block";
 }
 
 function closeModal() {
-    let divNewNota = document.querySelector(".new-nota")
-    let divCover = document.querySelector(".cover")
+  let divNewNota = document.querySelector(".new-nota");
+  let divCover = document.querySelector(".cover");
 
-    divNewNota.style.display = "none"
-    divCover.style.display = "none"
+  divNewNota.style.display = "none";
+  divCover.style.display = "none";
 }
 
-function readNotes() {
+function renderNotes() {
     /* Aca estoy tirando verdura fuerte */
     // EMPIEZO
 
@@ -79,6 +79,7 @@ function readNotes() {
 
     //  TERMINO
 
+function deleteThisNote(nota) {
+  console.log(nota);
 }
-
-
+}

@@ -41,7 +41,11 @@ function readNotes() {
             let stateHTML = document.createElement('p');
     
             tittle.textContent = tarea.titulo;
-            desc.textContent = tarea.descripcion;
+            if (tarea.descripcion.length >= 200) {
+                desc.textContent = tarea.descripcion.slice(0,200) + "...";
+            } else {
+                desc.textContent = tarea.descripcion;
+            }
             stateHTML.textContent = tarea.estado;
     
             art.appendChild(tittle)
